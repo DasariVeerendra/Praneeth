@@ -1,0 +1,1192 @@
+
+L1 SAP ABAP Mock Test Set 1
+
+
+Section:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+Time Left : 09 : 37 List View 
+    Active     Attempted     Not Attempted
+Q1
+
+Consider a class with the following defination:
+
+CLASS employee DEFINITION.
+PUBLIC SECTION.
+    METHODS:
+      constructor
+        IMPORTING im_employee_no TYPE i
+                  im_employee_name TYPE string,
+      display_employee.
+PRIVATE SECTION.
+DATA:  no  TYPE i,
+       name TYPE string.
+ENDCLASS.
+
+What is the correct way to invoke the constructor?
+Single Choice - Select one correct answer from the options list.
+CALL METHOD SET_ATTR 
+    EXPORTING im_employee_no = 1
+              im_employee_name = 'John Jones'.
+CALL METHOD SET_ATTR 
+   IMPORTING im_employee_no = 1
+              im_employee_name = 'John Jones'.
+CREATE OBJECT g_employee1
+    IMPORTING  im_employee_no = 1
+              im_employee_name = 'John Jones'.
+CREATE OBJECT g_employee1
+    EXPORTING im_employee_no = 1
+              im_employee_name = 'John Jones'.
+Q2
+
+Consider a class with the following definition:
+
+CLASS bluecollar_employee DEFINITION
+           INHERITING FROM employee.
+PUBLIC SECTION.
+  METHODS:
+        set_attributes REDEFINITION,
+         display_attributes REDEFINITION.
+PRIVATE SECTION.
+    DATA hours TYPE i.
+ ENDCLASS.
+
+Which of the following statement(s) are true?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+The class employee contains the method set_attributes
+Class employee is the parent class and class bluecollar_employee is the child class
+The class employee contains the method display_attributes
+None of the above
+Q3
+
+Inheritance means:
+Single Choice - Select one correct answer from the options list.
+Keeping attributes and methods in the same class
+Deriving a child class from parent class; child class assign all its properties to the parent class
+No relation between child and parent class
+Deriving a child class from parent class; child class acquires all the properties from the parent class
+Q4
+
+Which of the following statements(s) is/are true?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+constructor methods are automatically called when an object of the class is created
+Private methods are automatically called when an object of the class is created
+Public methods can only be accessed by methods that are within the class
+Private methods can only be accessed by methods that are within the class
+Q5
+
+Identify the statement/s which does not represent the feature of domain:
+Single Choice - Select one correct answer from the options list.
+It describes the technical characteristics of a table field.
+A single domain can be used as the basis for any number of fields that are identically structured.
+A domain must be created for every field of a transparent table.
+The value range for a domain is defined by specifying a data type, and a length.
+Q6
+
+Which of the following statement(s) regarding table buffering are true?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+In Single-record buffering, only the record that was accessed is loaded into the buffer.
+In full buffering, only the record that was accessed is loaded into the buffer.
+In Single-record buffering, all the records of the table are loaded into the buffer.
+In full buffering, all the records of the table are loaded into the buffer.
+Q7
+
+________ signifies the changes to the SAP repository objects made at the customer site.
+Single Choice - Select one correct answer from the options list.
+Customising
+Personalisation
+Modifications
+Enhancement
+Q8
+
+The following is the procedure to be done at Customer Site for enhancement projects. 
+Mention the correct sequence of steps to be done.
+
+1. Activate the enhancement project.
+2. Edit the individual components using the project management function and document the entire enhancement project.
+3. Create an enhancement project and then choose the SAP enhancements that you want to use.
+Single Choice - Select one correct answer from the options list.
+1,2,3
+3,2,1
+3,1,2
+2,1,3
+Q9
+
+Which of the given is an example of non configuration item ?
+Single Choice - Select one correct answer from the options list.
+Design document
+Project plan
+Weekly status Reports
+Test case
+Q10
+
+Elicitation process is carried under which phase of SDLC model ?
+Single Choice - Select one correct answer from the options list.
+Feasibility
+Design
+Requirements
+Coding
+Q11
+
+When are the activities like knowledge transfer , end user training , project signoff carried out?
+Single Choice - Select one correct answer from the options list.
+After unit testing
+After acceptance testing
+After system testing
+Before system testing
+Q12
+
+Which of the statement(s) regarding internal subroutines is/are incorrect?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+A database table can be passed to an internal subroutine.
+A subroutine cannot call another subroutine.
+A subroutine can call itself.
+A subroutine cannot be defined in another subroutine.
+Q13
+
+Which of the following statement(s)  regarding parameters passed to and received from 
+a function module is/are correct?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+Assignments after importing proceed from right-to-left.
+Assignments after exporting proceed from right-to-left.
+Assignments after importing proceed from left-to-right.
+Assignments after exporting proceed from left-to-right.
+Q14
+
+You want to write an ABAP executable program that displays a list of flights. 
+When the user double-clicks on a line displaying a flight, you want to display a secondary list that displays 
+all bookings for this flight. Which is the correct usage of the HIDE technique to provide information about 
+the selected line on the base list to the event block that builds the secondary list? 
+Please choose the correct answer
+Single Choice - Select one correct answer from the options list.
+SELECT * FROM sflight INTO wa. WRITE:/ wa-carrid, wa-connid, wa-fldate. HIDE:/ wa-carrid, wa-connid, wa-fldate. CLEAR: wa-carrid, wa-connid, wa-fldate. ENDSELECT.
+SELECT * FROM SFLIGHT INTO WA. WRITE:/ WA-CARRID, WA-CONNID, WA-FLDATE. HIDE: WA-CARRID, WA-CONNID, WA-FLDATE. ENDSELECT. CLEAR: WA.
+SELECT * FROM sflight INTO wa. HIDE: wa-carrid, wa-connid, wa-fldate. WRITE:/ wa-carrid, wa-connid, wa-fldate. CLEAR: wa-carrid, wa-connid, wa-fldate. ENDSELECT.
+All the answers are wrong
+Q15
+
+What will be the value of f1 and f2 after the program completes execution?
+
+REPORT a.
+ DO 3 TIMES. 
+  PERFORM sub1. 
+ENDDO. 
+
+FORM sub1. 
+  DATA     f1  TYPE i VALUE 5. 
+  STATICS f2 TYPE i VALUE 5. 
+  f1  = f1  + 1. 
+  f2  = f2 + 1. 
+  WRITE: / f1, f2. 
+ENDFORM.
+Single Choice - Select one correct answer from the options list.
+6     6
+6      6
+6      6
+6     6
+7      7
+8      8
+6     6
+6      7
+6      8
+6     6
+7     6
+8      6
+Q16
+
+Following is the source code as it appears in the function module. 
+Which of the following statement(s) is correct?
+
+
+Single Choice - Select one correct answer from the options list.
+The following is the correct code to invoke the function Module. 
+
+REPORT  Z_VKCALLFUNCMODU1.
+tables sflight.
+data: it1_a like standard table of sflight,
+      it_imp  like standard table of sflight,
+            wa like sflight.  
+start-of-selection.
+select * up to 3 rows from sflight into table it1_a.
+  CALL FUNCTION 'Z_VKFUNCMODU1'
+    CHANGING
+   it1_a         =  it_imp.
+In the function Module it_imp is declared as an Import parameter and it1_a is declared as an output parameter.
+The following is the correct code to invoke the function Module.
+
+REPORT  Z_VKCALLFUNCMODU1.
+tables sflight.
+data: it1_a like standard table of sflight,
+      it_imp  like standard table of sflight,
+            wa like sflight.  
+start-of-selection.
+select * up to 3 rows from sflight into table it1_a.
+  CALL FUNCTION 'Z_VKFUNCMODU1'
+    CHANGING
+   it_imp         =   it1_a.
+In the function Module it_imp is declared as an Export parameter and it1_a is declared as an import parameter.
+Q17
+
+Which of the following statements about subscreens are correct?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+You Call Subscreens Using The Abap Command Call Subscreen.
+You Call Subscreens Using The Screen Command Call Subscreen.
+Subscreens May Have Their Own PBO And PAI Logic.
+Subscreens do not Have Their Own Ok Code Field
+Q18
+
+When would  you use one of the F4_IF* functions?
+Single Choice - Select one correct answer from the options list.
+In the module that perform OKCODE processing?
+In the PAI when the process on value- request dialog event is triggered
+In the PBO when the process on value- request dialog event is triggered
+In the PAI when the process on help- request dialog event is triggered
+Q19
+
+What methods could be used to specify the next screen to be displayed?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+Set screen
+Submit screen
+Use the next screen option on the screen attributes
+Loop at screen
+Q20
+
+ Which of the following component that is not a part of a dynpro? (Please choose the correct answer)
+Single Choice - Select one correct answer from the options list.
+Flow logic
+Screen attributes
+Module pool
+Element list
+Screen layout
+Q21
+
+Which type of memory is retained for the duration of external session?
+Single Choice - Select one correct answer from the options list.
+Extended Memory
+SAP Memory
+ABAP/4 Memory
+Expanded Memory
+Q22
+
+Mark the code that will display the selection screen of the called program ZIST?
+Single Choice - Select one correct answer from the options list.
+SUBMIT ZTST USING SELECTION-SET 'VAR1'
+SUBMIT ZTST VIA SELECTION-SCREEN
+SUBMIT ZTST AND RETURN
+SUBMIT ZTST 
+Q23
+
+To keep multiple screen fields open for input after an error or warning message is displayed
+Single Choice - Select one correct answer from the options list.
+need standard PF-Status
+"Exit-Command" is used
+CHAIN" - "ENDCHAIN" is used
+None of the above
+Q24
+
+Which statement about table control are true?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+Page scrolling using the standarad toolbar is automatic and can be controlled by the user
+Column sizing is automatic and can be controlled by the user
+The sort option is automatic and can be controlled by the user
+Table controls are scrollable
+Q25
+
+What will be the output of the following code?
+
+REPORT  a.
+data: begin of it1 OCCURS 3, 
+        a type i,
+end of it1,
+       it2 LIKE TABLE OF it1 ,
+       wa like it1.
+DO 2 times.
+  wa-a = sy-index.
+  APPEND wa to it1.
+ENDDO.
+DO 2 times.
+    wa-a = sy-index * 2.
+    APPEND wa to it2.
+ENDDO.
+APPEND lines of it2 to  it1.
+LOOP AT it1 into wa.
+  write: / wa-a.
+ENDLOOP.
+Single Choice - Select one correct answer from the options list.
+1
+2
+1
+2
+1
+2
+2
+1
+1
+2
+1
+4
+1
+2
+2
+4
+Q26
+
+Assume that an internal table named it has two fields f1 and f2 and three records. 
+
+
+
+Which of the following statement will read from the second record?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+loop at it  where it-f2 ='YY'.
+loop at it  from 2.
+loop at it  to 2.
+loop at it  where f2 ='YY'.
+Q27
+
+REPORT  a.
+DATA: BEGIN OF itab OCCURS 10, 
+qty type I, 
+END OF itab. 
+
+DO 25 TIMES. 
+  itab-qty = sy-index. 
+  APPEND itab. 
+ENDDO. 
+
+LOOP AT itab WHERE qty > 10. 
+  WRITE: /1 itab-qty. 
+ENDLOOP.
+Single Choice - Select one correct answer from the options list.
+Output of only those itab rows with a qty field less than 10
+Output of the first 10 itab rows with a qty field greater than 10 
+A syntax error 
+None of the above 
+Q28
+
+The declarative keyword for defining your own data types in an ABAP program is ________.
+Single Choice - Select one correct answer from the options list.
+Data
+Type-Groups
+Types
+Data-Type
+Q29
+
+What will be the output of the following lines of code?
+
+REPORT a.
+data var1 type p VALUE 5.
+do 3 times.
+  If var1 > 0 and var1 < 3.
+    var1 = var1 + 1.
+  elseif var1 = 5.
+    var1 = var1 - 2.
+  else.
+    var1 = var1 - 1.
+  endif.
+enddo.
+Write: / var1.
+Single Choice - Select one correct answer from the options list.
+5
+3
+2
+1
+Q30
+
+What will be the output of the following lines of code?
+
+REPORT a.
+DATA: BEGIN OF fldstr1,
+         i      TYPE i            VALUE 7,
+         t(11) TYPE c             VALUE 'Hello World',
+         f    TYPE f              VALUE '5.456e+07',
+         p     TYPE p DECIMALS 2  VALUE '7.74',
+         n(6)     TYPE n            VALUE '123456',
+      END OF fldstr1.
+
+DATA: BEGIN OF fldstr2,
+         i      TYPE i            VALUE 3,
+         p     TYPE p DECIMALS 2  VALUE '72.34',
+         t(6)  TYPE c             VALUE 'Hello',
+      END OF fldstr2.
+
+MOVE-corresponding fldstr1 TO fldstr2.
+WRITE: / fldstr2-i,
+      / fldstr2-p,
+      / fldstr2-t.
+Single Choice - Select one correct answer from the options list.
+The program when  compiled will give an error.
+3
+72.34
+Hello
+7
+7.74
+Hello
+3
+7.74
+Hello
+Q31
+
+Based on the below defintion, mention which of the following statement(s) is/are true?
+
+ types: BEGIN OF t_ekpo,
+  ebeln type n,
+  ebelp type c, 
+end of t_ekpo.
+wa_ekpo-ebeln = '1'.
+wa_ekpo-ebelp = 'A'.
+append wa_ekpo to it_ekpo.
+loop at it_ekpo into wa_ekpo.
+write : wa_ekpo-ebeln, wa_ekpo-ebelp.
+endloop.
+
+data: it_ekpo TYPE STANDARD TABLE OF t_ekpo INITIAL SIZE 0, 
+wa_ekpo TYPE t_ekpo.
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+t_ekpo is the definition of internal table
+It is mandatory to give the statement wa_ekpo TYPE t_ekpo to define the workarea.
+it_ekpo is the definition of internal table
+Instead of defining the work area, implicit header line must  be used.
+Q32
+
+Variables are distinguished by their:
+Single Choice - Select one correct answer from the options list.
+Name
+Type
+Length
+All of the above
+Q33
+
+What will be the output of the following lines of code?
+
+REPORT a.
+DATA n1(10) TYPE n VALUE 'abc'.
+DATA int1 TYPE I.
+int1 = n1.
+WRITE int1.
+Single Choice - Select one correct answer from the options list.
+0
+The program when executed will display dump
+The program will give compilation error and hence will not get executed
+abc
+Q34
+
+What will be the output of the following code?
+
+REPORT a.
+TYPES : BEGIN OF type1,
+         var1 TYPE i,
+         var2 TYPE i,
+        END OF type1.
+DATA : itab TYPE STANDARD TABLE OF type1,
+       wa TYPE type1.
+DO 4 TIMES.
+  wa-var1 = sy-index.
+  wa-var2 = sy-index ** 2.
+  APPEND wa TO itab.
+ENDDO.
+READ TABLE itab INTO wa WITH KEY var2 = 4.
+WRITE : wa-var1.
+Single Choice - Select one correct answer from the options list.
+2
+4
+6
+1
+Q35
+
+Which statement will sort the data of an internal table with fields FRUIT, QTY and PRICE so that it appears as follows?
+
+FRUIT QTY PRICE 
+Apples 12 22.50 
+Apples 9 18.25 
+Oranges 15 17.35 
+Bananas 20 10.20 
+Bananas 15 6.89 
+Bananas 5 2.75 
+Single Choice - Select one correct answer from the options list.
+SORT itab DESCENDING BY QTY PRICE. 
+ SORT itab BY PRICE FRUIT. 
+  SORT itab. 
+ SORT itab BY PRICE DESCENDING. 
+Q36
+
+What will be the output of the Program?
+
+REPORT a.
+DATA: var1 TYPE i,
+      var2 TYPE i. 
+DO 4 TIMES.
+  var2 = sy-index. 
+  var1 = var2 MOD 2. 
+  IF var1 = 0. 
+    CONTINUE. 
+  ENDIF. 
+  WRITE / sy-index. 
+ENDDO.
+Single Choice - Select one correct answer from the options list.
+1
+2
+4
+1
+3
+4
+Q37
+
+Based on code mentioned below, specify  the error.
+
+data:  begin of it6.
+include structure lfa1.    
+data: delflag,
+rowtotal,
+end of it6.
+Single Choice - Select one correct answer from the options list.
+The data keyword after the statement ' include structure lfa1' is not required.
+There should be comma after the statement ' include structure lfa1'
+There is no error in the definition
+The header line is not defined
+Q38
+
+What is the result of the following code?
+
+REPORT  a.
+DATA field(6) TYPE c VALUE 'ABCDE'.
+ Write field+2(4).
+Single Choice - Select one correct answer from the options list.
+ABCDEF
+CDEF
+CDE
+CDEAB
+Q39
+
+Which of the following statement(s) regarding Adobe Forms is/are correct?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+Content areas can be included only on body pages
+Content areas can be included only on master pages
+Dynamic content is wrapped up in body pages.
+A master page is a top-level sub form
+Q40
+
+Which of the following statement(s) regarding types of Interactive Adobe forms is/are correct?
+Single Choice - Select one correct answer from the options list.
+In Offline mode the user is logged on to the SAP system
+In Online mode the user is logged on to the SAP system
+Context-sensitive value help will be available in offline mode.
+Static value help will not be available in Offline mode.
+Q41
+
+In ALE the systems communicate with each other through ______.
+Single Choice - Select one correct answer from the options list.
+Subroutines
+RFC
+Module pool
+Function Module
+Q42
+
+Global class for custom controls is _____.
+Single Choice - Select one correct answer from the options list.
+CL_GUI_ALV_GRID
+CL_GUI_CUSTOM_CONTAINER
+LVC_T_FCAT
+LVC_S_LAYO
+Q43
+
+Which one of these is the correct way to invoke the function LVC_FIELDCATALOG_MERGE?
+Single Choice - Select one correct answer from the options list.
+CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
+CHANGING
+   I_STRUCTURE_NAME = 'SFLIGHT'
+EXPORTING
+      CT_FIELDCAT   = T_FCAT.
+CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
+EXPORTING
+   I_STRUCTURE_NAME = 'SFLIGHT'
+CHANGING
+      CT_FIELDCAT   = T_FCAT.
+CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
+IMPORTING
+   I_STRUCTURE_NAME = 'SFLIGHT'
+EXPORTING
+      CT_FIELDCAT   = T_FCAT.
+CALL FUNCTION 'LVC_FIELDCATALOG_MERGE'
+IMPORTING
+   I_STRUCTURE_NAME = 'SFLIGHT'
+CHANGING
+      CT_FIELDCAT   = T_FCAT.
+Q44
+
+Consider the following code snippet. Which of the  statement(s) is/are correct?
+
+CALL METHOD R_GRID->SET_TABLE_FOR_FIRST_DISPLAY
+  EXPORTING
+   I_STRUCTURE_NAME = 'SFLIGHT'
+  CHANGING
+   IT_OUTTAB = T_SFLIGHT
+   IT_SORT   = T_SORT.
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+The code mentioned in the question has to be preceeded by the following code for the sorting to work.
+S_SORT-SPOS ='1'.
+FS_SORT-FIELDNAME = 'CARRID'.
+FS_SORT-DOWN = 'X'.
+APPEND FS_SORT TO T_SORT.
+Where FS_SORT is of type LVC_S_SORT.
+The code mentioned in the question is incorrect. It is not possible to sort an ALV programmatically.
+T_SORT is an internal table of type LVC_S_SORT.
+T_SORT is an internal table of type LVC_T_SORT.
+Q45
+
+The method SET_TABLE_FOR_FIRST_DISPLAY belongs to the class_________.
+Single Choice - Select one correct answer from the options list.
+CL_GUI_ALV_GRID
+CL_GUI_CUSTOM_CONTAINER
+LVC_T_FCAT
+LVC_S_LAYO
+Q46
+
+Which of the following function modules would you see in a BDC program which uses a transaction method?
+Single Choice - Select one correct answer from the options list.
+BDC_INSERT
+BDC_OPEN_GROUP
+BDC_CLOSE_GROUP
+TRANSACTION
+None of these
+Q47
+
+Which of the following are components of BDCDATA structure?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+PROGRAM
+FVALUE
+FNAME
+DYNPRO
+Q48
+
+BDC_INSERT takes the following two parameters.
+Single Choice - Select one correct answer from the options list.
+tcode & dynprotab
+fnam & fval
+program & fnam
+tcode & fnam
+Q49
+
+FUNCTION module used for smart forms is __________.
+Single Choice - Select one correct answer from the options list.
+ssf_function_module_name
+ssf_function_name
+ssf_function_name_module
+ssf_name_function_module
+Q50
+
+How many windows can be defined as main window in a smart form?
+Single Choice - Select one correct answer from the options list.
+1
+2
+3
+10
+Q51
+
+What will happen when the following code is executed?
+
+REPORT a.
+START-OF-SELECTION.
+WRITE: 'MARA'.
+FORMAT HOTSPOT ON.
+WRITE:/ 'LFA1'.
+FORMAT HOTSPOT OFF.
+AT LINE-SELECTION.
+WRITE / 'Table'.
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+The primary list will display
+MARA
+LFA1
+Table
+The primary list will display
+MARA
+LFA1
+When the user clicks on MARA, Table will be displayed on the secondary list
+The primary list will display
+MARA
+LFA1
+When the user clicks on LFA1, Table will be displayed on the secondary list
+The primary list will display
+MARA
+LFA1.
+The user cannot click on either of these values
+Q52
+
+REPORT a.
+The following ABAP code displays a primary list.
+DATA: TEMPNO LIKE TABLE OF ZVKEMP-EMPNO,
+      WA LIKE ZVKEMP-EMPNO.
+START-OF-SELECTION.
+WA = 7369. APPEND WA TO TEMPNO.
+WA = 7844. APPEND WA TO TEMPNO.
+WA = 7566. APPEND WA TO TEMPNO.
+LOOP AT TEMPNO INTO WA.
+     WRITE:/ WA.
+     HIDE WA.
+ENDLOOP.
+SKIP.
+AT LINE-SELECTION.
+      WRITE:/ 'SY-LISEL:' ,sy-lisel.
+      WRITE:/ 'WA:' ,wa.
+
+What will happen when the user double clicks on any value in the primary list?
+Single Choice - Select one correct answer from the options list.
+WA will contain the value selected by the user and SY-LISEL will contain 7566
+HIDE is inappropriate in this context
+SY-LISEL and WA will contain the value selected by the user.
+SY-LISEL will contain the value selected by the user and WA will contain 7566
+Q53
+
+What system variable contains the contents of current line in interactive reporting?
+Single Choice - Select one correct answer from the options list.
+SY-LSIND
+SY-SUBRC
+SY-LISEL
+SY-LINNO
+Q54
+
+What will happen when the following code is executed?
+
+REPORT a.
+START-OF-SELECTION.
+  WRITE 'List1'.
+AT pf4.
+ PERFORM disp.
+AT pf5.
+  PERFORM disp.
+FORM disp.
+  WRITE: 'Secondary List',
+       / 'SY-LSIND =', sy-lsind,
+       / 'SY-UCOMM =', sy-ucomm.
+ENDFORM.
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+When the user clicks on 'List1' ,
+the secondary list will be displayed.
+SY-LSIND will contain 'List1' and
+SY-UCOMM will contain pf04
+When the user clicks on 'List1',
+ the secondary list will be displayed.
+SY-LSIND will contain 'List1' and
+SY-UCOMM will contain null
+When the presses the function key f5,  the secondary list will be displayed.
+SY-LSIND will contain 'List1' and
+SY-UCOMM will contain pf05
+When the presses the function key f4,  the secondary list will be displayed.
+SY-LSIND will contain 'List1' and
+SY-UCOMM will contain pf04
+Q55
+
+Which of the following code will display 'Header' in the secondary list?
+Single Choice - Select one correct answer from the options list.
+REPORT A.
+write: /'10', /'20' ,/'30' , /'40'.
+AT LINE-SELECTION.
+  Write 'Secondary List'.
+  
+END-OF-SELECTION.
+  Write 'Header'.
+REPORT A.
+write: /'10', /'20' ,/'30' , /'40'.
+AT LINE-SELECTION.
+  Write 'Secondary List'.
+  
+START-OF-SELECTION.
+  Write 'Header'.
+REPORT A.
+write: /'10', /'20' ,/'30' , /'40'.
+AT LINE-SELECTION.
+  Write 'Secondary List'.
+  
+TOP-OF-PAGE.
+  Write 'Header'.
+REPORT A.
+write: /'10', /'20' ,/'30' , /'40'.
+AT LINE-SELECTION.
+  Write 'Secondary List'.
+  
+TOP-OF-PAGE DURING LINE-SELECTION.
+  Write 'Header'.
+Q56
+
+<xs:element name="book">
+  <xs:complexType>
+    <xs:all>
+      <xs:element name="author" type="xs:string"/>
+      <xs:element name="price" type="xs:integer"/>
+    </xs:all>
+  </xs:complexType>
+</xs:element>
+Which of the given statement is true about the above schema ?
+Single Choice - Select one correct answer from the options list.
+Child elements author and price may occur 0 or more times in XML document
+Child elements author and price will occur in same order in XML document
+Child elements author and price will occur only once and in any order in XML document
+Child elements author and price will occur only once and in given order in XML document
+Q57
+
+Analyze the below given HTML code and identify how many radio buttons are allowed to be selected?
+
+<input type="radio" name="r" value="Business"/>Business
+<input type="radio" name="g" value="Employee - Private Sector"/>Employee - Private Sector
+<input type="radio" name="b" value="Employee - Public Sector"/>Employee - Public Sector
+Single Choice - Select one correct answer from the options list.
+0
+1
+2
+3
+Q58
+
+1.<?xml version="1.0" encoding="UTF-8"?>
+2. <library>
+3.  <books>
+4.   <book category=Technical>
+5.    <name>Head First J2SE</name>
+6.    <pages>600</pages>
+7.    <price>700</price>
+8.  </book>
+9. </books>
+10.</library>
+Which change will make above given XML as well formed XML?
+Single Choice - Select one correct answer from the options list.
+Remove line no.1 
+category value should be in quotes
+element values should be in quotes
+both category and element values need to be in quotes
+Q59
+
+What will be the output of the below code?
+
+<!DOCTYPE html>
+<html>
+<script>
+ function fun1(){
+  frm1.elements[0].value="India";
+ }
+</script>
+<body onload="fun1()">
+ <form name="frm1">
+  <input type="hidden" name="country"/>
+  <input type="Submit" value="Go"/>
+ </form>
+</body>
+</html>
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+It will display only a button with "Go" caption
+It will display a text box and a button with "Go" caption
+Value 'India' will be set to the element with name 'country'
+Value 'India' will be not set to the element with name 'country' as JavaScript code is having error
+Q60
+
+Choose the correct style example of ID selector?                   
+Single Choice - Select one correct answer from the options list.
+p {
+    text-align: center;
+    color: red;
+}
+
+#para1 {
+    text-align: center;
+    color: red;
+}
+
+.center {
+    text-align: center;
+    color: red;
+}
+
+h1, h2, p {
+    text-align: center;
+    color: red;
+}
+
+Q61
+
+What happens if moveTo(x,y) method is called on window object in JavaScript ? 
+Single Choice - Select one correct answer from the options list.
+Current window will be move to the coordinate specified by x and y.
+Current window will be move by x and y value.
+Moves window to a new frame.
+Window will disappear in background.
+Q62
+
+During which phase, defects are injected ?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+Requirement Gathering
+Errors in previous phase output
+Testing
+Deployment
+Q63
+
+When is the application UI designed?
+Single Choice - Select one correct answer from the options list.
+During high level design
+During architectural design
+During low level design
+Before design phase
+Q64
+
+Suppose a user executes a program and a roll area is allocated. If without waiting for it to finish, 
+the user switches to another session and starts up the same program again. What will happen?
+Single Choice - Select one correct answer from the options list.
+The program will be executed in the same roll area.
+Another roll area is allocated for the second execution of that program. 
+The same program cannot be started in another session as the program will be locked.
+None of the above
+Q65
+
+If you write an ABAP/4 program on UNIX with an Oracle database and an OSF front end interface, 
+is there a need to modify the program to run it on a windows NT machine, with Informix database 
+and a OS/2 interface as front end.
+Single Choice - Select one correct answer from the options list.
+It can run without modification
+The program must be modified
+ABAP/4 program cannot run on Windows Machine
+None of the above
+Q66
+
+Walk through the following pseudocode  and choose the appropriate description for the same
+
+BEGIN
+             DECLARE fnumbers  AS FILE
+             DECLARE no AS INTEGER
+             DECLARE total AS INTEGER
+        
+             IF(fileExists(fnumbers)) THEN
+                      OPEN fnumbers
+                      READ data from the file AND STORE IN no
+                      WHILE (NOT EOF )
+                             
+                             total=total + no
+                             READ data from the file AND STORE IN no
+                        END Until
+                       DISPLAY  total
+                        CLOSE file
+              END IF
+END
+Single Choice - Select one correct answer from the options list.
+This pseudocode  will read all even  numbers from a file,add all the numbers and display the total.
+This pseudocode  will read all numbers from a file,add all the numbers and display the total.
+This pseudocode  will read all odd numbers from a file,add all the numbers and display the total.
+'This pseudocode  will read all numbers from a file except the first,add all the numbers and display the total.
+Q67
+
+Identify the pseudocode which exhibits robustness 
+Single Choice - Select one correct answer from the options list.
+SUB  shape(sides)
+ IF (sides >0 and sides <3) THEN
+     PRINT "No proper mathematical shape "
+ ELSE IF (sides > =3 and sides < 4) THEN
+     PRINT "It Can be a Triangle"
+ ELSE IF (sides >= 4 and sides<5) THEN
+     PRINT "It can be a Square"
+ ELSE
+     PRINT "It can be a Polygon"
+ END IF
+END
+SUB  shape(sides)
+ IF(sides<=0) THEN
+   PRINT "No shape"
+ IF (sides >0 and sides <3) THEN
+   PRINT "No proper mathematical shape"
+ ELSE IF (sides > =3 and sides < 4) THEN
+   PRINT "It Can be a Triangle"
+ ELSE IF (sides >= 4 and sides<5) THEN
+   PRINT "It can be a Square"
+ END IF
+END
+SUB  shape(sides)
+ IF(sides<=0) THEN
+  PRINT "No shape"
+ ELSE IF (sides >0 and sides <3) THEN
+  PRINT "No proper mathematical shape"
+ ELSE IF (sides > =3 and sides < 4) THEN
+  PRINT "It Can be a Triangle"
+ ELSE IF (sides >= 4 and sides<5) THEN
+  PRINT "It can be a Square"
+ ELSE IF
+  PRINT "It can be a Polygon"
+ END IF
+END
+SUB  shape(sides)
+ IF(sides<=0) THEN
+  PRINT "No shape"
+ ELSE IF (sides >0 and sides <3) THEN
+  PRINT "No proper mathematical shape"
+ ELSE IF (sides > =3 and sides < 4) THEN
+  PRINT "It Can be a Triangle"
+ ELSE IF (sides >= 4 and sides<5) THEN
+  PRINT "It can be a Square"
+ ELSE IF (sides >= 5 and sides<6) THEN
+  PRINT "It can be a Pentagon"
+ ELSE
+   PRINT "It can be a Polygon"
+ END IF
+END
+Q68
+
+Which of the following are correct guidelines for creating exception handlers?
+Multiple Choice - This may have multiple correct answers. Select required answer(s) from the options list.
+No need to analyze the consequences of failures but need to  find out correct probability.
+No need to document the reason for the exception
+Catch the exception in the appropriate parent module
+Raise the exception whenever the condition arises in the sub module
+Q69
+
+Examine the content of EMPLOYEE table:
+
+
+
+Identify the query to display hiredate and number of employees joined in that date in a given department number. Also order the details based on hiredate. 
+Single Choice - Select one correct answer from the options list.
+SELECT hiredate,COUNT(*) FROM employee GROUP BY hiredate ORDER BY 1
+SELECT hiredate,COUNT(*) FROM employee WHERE deptno=20 GROUP BY hiredate ORDER BY 1;
+SELECT hiredate,COUNT(*) FROM employee WHERE deptno=20 GROUP BY hiredate ORDER BY 0;
+SELECT hiredate,COUNT(*) FROM employee GROUP BY hiredate ORDER BY 1 WHERE deptno=20;
+Q70
+
+Examine the content of EMPLOYEE table:
+
+
+
+Identify the query to display list of employee details(ename, sal and job) who are earning salary higher than all the minimum salaries based on each job.
+Single Choice - Select one correct answer from the options list.
+SELECT ename,sal,job FROM employee WHERE sal>
+ (SELECT min(sal) FROM employee GROUP BY job);
+ 
+SELECT ename,sal,job FROM employee WHERE sal>ANY
+ (SELECT min(sal) FROM employee GROUP BY job);
+ 
+SELECT ename,sal,job FROM employee WHERE sal>ALL
+ (SELECT min(sal) FROM employee);
+ 
+SELECT ename,sal,job FROM employee WHERE sal>ALL
+ (SELECT min(sal) FROM employee GROUP BY job);
+ 
+Q71
+
+With SQL, how do you select all the records from a table named "Persons" where the "FirstName" is "Peter" and the "LastName" is "Jackson"? 
+Single Choice - Select one correct answer from the options list.
+SELECT * FROM Persons WHERE FirstName='Peter' AND LastName='Jackson'
+SELECT FirstName='Peter', LastName='Jackson' FROM Persons
+SELECT * FROM Persons WHERE FirstName<>'Peter' AND LastName<>'Jackson'
+None
+Q72
+
+Which statement(s) is/are true about Procedures?
+i. Parameter with IN mode is used to pass values to the procedure.
+ii. Parameter with OUT mode is used to return values to the caller.
+iii. Parameter with IN OUT mode is used to pass initial values to the procedure and return updated values to the caller.
+iv. Formal parameter should be assigned a value, if parameter mode is IN OUT.
+Single Choice - Select one correct answer from the options list.
+Statement i and ii are true
+Statement ii and iii are true
+Statement iii and iv are true
+All the statements are true
+Q73
+
+What is the use of an index in Oracle?
+Single Choice - Select one correct answer from the options list.
+Retrieve data more quickly and efficiently
+Related data requires much less I/O overhead if accessed simultaneously
+Simplify the user’s perception of data access
+All of the Mentioned
+Q74
+
+Examine the structure of dept table:
+
+
+
+A developer had created department_master table with the similar structure of dept table using the below query:
+
+CREATE TABLE department_master AS SELECT * FROM dept WHERE 1=2;
+
+Identify the query to copy all records from dept table and insert the same into department_master table.
+Single Choice - Select one correct answer from the options list.
+INSERT INTO department_master SELECT * FROM dept;
+INSERT INTO department_master VALUES SELECT * FROM dept;
+INSERT INTO department_master VALUES AS SELECT * FROM dept;
+Copying of records from one table and inserting to another table is impossible.
+Q75
+
+Analyze the below code and find out the type of cursor used in this code for processing result set data.
+
+DECLARE
+  TYPE details IS REF CURSOR;
+  emp employee%ROWTYPE;
+  dept1 dept%ROWTYPE;
+  cname details;
+  BEGIN
+   OPEN cname FOR SELECT * FROM employee;
+   FETCH cname INTO emp;
+   LOOP
+   DBMS_OUTPUT.PUT_LINE(emp.ename);
+     EXIT WHEN cname%NOTFOUND;
+     FETCH cname INTO emp;
+   END LOOP;
+    CLOSE cname;
+    OPEN cname FOR SELECT * FROM dept;
+    FETCH cname INTO dept1;
+    LOOP
+     DBMS_OUTPUT.PUT_LINE(dept1.dname);
+     EXIT WHEN cname%NOTFOUND;
+     FETCH cname INTO dept1;
+   END LOOP;
+   CLOSE cname;
+END;
+/
+Single Choice - Select one correct answer from the options list.
+Implicit Cursor
+Parameterized Cursor
+Weak Type Cursor Variable
+Strong Type Cursor Variable
+OOABAP
+1234
+Data Dictionary
+56
+Enhancement and Modification
+78
+Intro to SE
+91011
+Modularization Techniques
+1213141516
+Module Pool Programming
+1718192021222324
+ABAP Prog and Internal Tables
+2526272829303132333435363738
+Adobe Forms
+3940
+ALE IDOCS
+41
+ALV
+42434445
+Batch Data Communication
+464748
+Smart Forms
+4950
+Reporting Events
+5152535455
+Web Basics
+565758596061
+QPA
+6263
+R3 Architecture - ABAP Dev Workbench
+6465
+PF with Pseudocode
+666768
+Oracle
+697071727374752 out of 75  Submit Assessment
